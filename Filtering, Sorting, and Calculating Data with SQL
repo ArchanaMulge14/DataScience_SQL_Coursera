@@ -1,0 +1,84 @@
+Query 1: You are doing an analysis on musicians that start with the letter “K”. 
+Select the correct query that would retrieve only the artists from artists table whose name starts with this letter.
+
+SELECT name
+FROM Artists
+WHERE name LIKE ‘K%’;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 2: Find all the tracks that have a length of 5,000,000 milliseconds or more.
+
+Select *
+from Tracks
+where milliseconds >= "5000000";
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 3: Find all the invoices whose total is between $5 and $15 dollars.
+
+Select count(InvoiceId)
+from Invoices
+where Total Between "5" and "15";
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 4: Find all the customers from the following States: RJ, DF, AB, BC, CA, WA, NY.
+
+select *
+from Customers
+where State IN ("RJ","DF","AB","BC","CA","WA","NY");
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 5: Find all the invoices for customer 56 and 58 where the total was between $1.00 and $5.00.
+
+Select *
+from Invoices
+where CustomerId = "56" OR CustomerId = "58"
+and total BETWEEN "1.00" AND "5.00";
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 6: Find all the tracks whose name starts with 'All'.
+
+Select Count(Name)
+from Tracks
+where Name like "All%";
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 7: Find all the customer emails that start with "J" and are from gmail.com.
+
+Select *
+from Customers
+where Email like "J%@gmail.com";
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 8: Find all the invoices from the billing city Brasília, Edmonton, and Vancouver and sort in descending order by invoice ID.
+
+Select *
+from Invoices
+where BillingCity IN ("Brasilia","Edmonton","Vancouver")
+Order by InvoiceId DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Query 9: Show the number of orders placed by each customer 
+(hint: this is found in the invoices table) and sort the result by the number of orders in descending order.
+
+SELECT c.CustomerId, c.FirstName, c.LastName, COUNT(i.InvoiceId) AS NumberOfOrders
+FROM customers c
+LEFT JOIN invoices i ON c.CustomerId = i.CustomerId
+GROUP BY c.CustomerId
+ORDER BY NumberOfOrders DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
