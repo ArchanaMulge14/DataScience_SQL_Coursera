@@ -1,0 +1,47 @@
+QUERY 1: Retrieve all columns from the customers table:
+
+SELECT * FROM customers
+
+------------------------------------------------------------------------------------------------
+
+QUERY 2: Retrieve only the Customer First Name, Last Name, and Company.
+
+SELECT 
+FirstName
+,LastName
+,Company
+FROM customers
+
+------------------------------------------------------------------------------------------------
+
+QUERY 3: Retrieve all the records from the Employees table.
+
+Select *
+from Employees;
+
+------------------------------------------------------------------------------------------------
+
+QUERY 4: Retrieve the FirstName, LastName, Birthdate, Address, City, and State from the 
+         Employees table.
+
+Select FirstName,LastName,Birthdate,Address,City,State
+from Employees;
+
+------------------------------------------------------------------------------------------------
+
+QUERY 5: Retrieve all the columns from the Tracks table, but only return 20 rows.
+
+Select *
+from Tracks
+LIMIT 20;
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
